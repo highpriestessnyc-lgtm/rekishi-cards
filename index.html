@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
-    <title>歴史人物カード・年号カード｜紀元0年から明治維新まで</title>
+    <title>歴史人物カード・年号カード｜紀元0年から現代まで</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
         --line:#d8c9a4; --shu:#b23a24; --shu-soft:#f6e3da; --gold:#9a7b24; --gold-soft:#f3ead0;
         --ai:#31435f; --ai-soft:#e2e8f0; --ok:#2e7d46; --ok-soft:#e0efe2; --bad:#b23a24;
         --shadow:0 2px 10px rgba(60,45,15,.12);
-        --era-kodai:#7a4a8c; --era-chusei:#3f6b4f; --era-sengoku:#b23a24; --era-edo:#31435f; --era-baku:#a06a12;
+        --era-kodai:#7a4a8c; --era-chusei:#3f6b4f; --era-sengoku:#b23a24; --era-edo:#31435f; --era-baku:#a06a12; --era-taisho:#2f6f6a; --era-showa:#7a5230; --era-heisei:#546e7a;
       }
       @media (prefers-color-scheme: dark){
         :root{
@@ -23,7 +23,7 @@
           --line:#3d3a33; --shu:#e0704f; --shu-soft:#3a2721; --gold:#d3ab4a; --gold-soft:#33301f;
           --ai:#8fb0dd; --ai-soft:#232c3d; --ok:#6fce8d; --ok-soft:#1e3325; --bad:#e0704f;
           --shadow:0 2px 10px rgba(0,0,0,.45);
-          --era-kodai:#c39bd6; --era-chusei:#8fcea5; --era-sengoku:#e0704f; --era-edo:#8fb0dd; --era-baku:#e0b45c;
+          --era-kodai:#c39bd6; --era-chusei:#8fcea5; --era-sengoku:#e0704f; --era-edo:#8fb0dd; --era-baku:#e0b45c; --era-taisho:#7fc4bc; --era-showa:#d3a878; --era-heisei:#a8c3cf;
         }
       }
       *{box-sizing:border-box}
@@ -178,7 +178,7 @@
       .era-cell b{display:block;font-family:"Shippori Mincho B1",serif;font-size:16px;line-height:1.3}
       .era-cell .ey{font-weight:900;font-size:13px;color:var(--shu);display:block;margin:2px 0}
       .era-cell span{font-size:12px;color:var(--ink-soft);line-height:1.5;display:block}
-      .era-cell.kodai{border-top-color:var(--era-kodai)} .era-cell.chusei{border-top-color:var(--era-chusei)} .era-cell.sengoku{border-top-color:var(--era-sengoku)} .era-cell.edo{border-top-color:var(--era-edo)} .era-cell.baku{border-top-color:var(--era-baku)}
+      .era-cell.kodai{border-top-color:var(--era-kodai)} .era-cell.chusei{border-top-color:var(--era-chusei)} .era-cell.sengoku{border-top-color:var(--era-sengoku)} .era-cell.edo{border-top-color:var(--era-edo)} .era-cell.baku{border-top-color:var(--era-baku)} .era-cell.taisho{border-top-color:var(--era-taisho)} .era-cell.showa{border-top-color:var(--era-showa)} .era-cell.heisei{border-top-color:var(--era-heisei)}
       .ygrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
       .ycard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
       .ycard.highlight{outline:3px solid var(--shu);outline-offset:2px}
@@ -231,10 +231,10 @@
     <div class="wrap">
       <header class="hero">
         <h1>歴史人物<span class="accent">カード</span>・年号<span class="accent">カード</span></h1>
-        <p>卑弥呼の時代から明治維新まで、日本史に登場する主要人物を時代順に網羅。何代目・代表的な偉業・語呂合わせで覚えて、関係図でつながりを掴み、最後にクイズで力試し。さらに「年号カード」タブでは、<b>紀元0年（紀元1年）から1889年まで</b>を時代区分と年号・語呂合わせに特化して覚えられます。</p>
+        <p>卑弥呼の時代から明治維新まで、日本史に登場する主要人物を時代順に網羅。何代目・代表的な偉業・語呂合わせで覚えて、関係図でつながりを掴み、最後にクイズで力試し。さらに「年号カード」タブでは、<b>紀元0年（紀元1年）から2011年まで</b>を時代区分と年号・語呂合わせに特化して覚えられます。</p>
         <div class="hero-stats">
           <span class="stat">人物カード <b>31</b> 人</span>
-          <span class="stat">年号カード <b>44</b> 枚（紀元0年〜）</span>
+          <span class="stat">年号カード <b>173</b> 枚（紀元0年〜2011年）</span>
           <span class="stat">用語カード <b>36</b> 枚</span>
           <span class="stat">足利将軍 <b>15</b> 代・徳川将軍 <b>15</b> 代</span>
           <span class="stat">関係図 <b>3</b> 本</span>
@@ -368,7 +368,7 @@
       <div id="yearsMode" class="hidden">
         <section class="block" style="margin-top:8px">
           <h2>年号カード ― 紀元0年から時代で覚える</h2>
-          <p class="lead">西暦には「0年」はなく紀元1年から始まります。ここでは便宜上「紀元0年〜」として、弥生時代から明治までを時代区分ごとに並べました。年号カードは「年号 → 出来事 → 語呂」の順に声に出すと定着します。カード下の人物ボタンを押すと、その出来事の中心人物カードへ飛べます。</p>
+          <p class="lead">西暦には「0年」はなく紀元1年から始まります。ここでは便宜上「紀元0年〜」として、弥生時代から現代までを時代区分ごとに並べました。年号カードは「年号 → 出来事 → 語呂」の順に声に出すと定着します。カード下の人物ボタンを押すと、その出来事の中心人物カードへ飛べます。</p>
           <div class="era-strip" aria-label="紀元0年からの時代区分">
             <div class="era-cell kodai"><b>弥生</b><span class="ey">紀元前〜3世紀</span><span>稲作と金属器。57年 金印、卑弥呼の邪馬台国</span></div>
             <div class="era-cell kodai"><b>古墳</b><span class="ey">3世紀〜538年</span><span>大きな古墳とヤマト政権</span></div>
@@ -380,9 +380,12 @@
             <div class="era-cell sengoku"><b>戦国・安土桃山</b><span class="ey">1467〜1603年</span><span>戦国大名、三英傑の天下統一</span></div>
             <div class="era-cell edo"><b>江戸</b><span class="ey">1603〜1868年</span><span>徳川将軍15代、参勤交代と鎖国、三大改革</span></div>
             <div class="era-cell baku"><b>幕末・明治</b><span class="ey">1853〜1912年</span><span>ペリー来航から維新、憲法制定まで</span></div>
+            <div class="era-cell taisho"><b>大正</b><span class="ey">1912〜1926年</span><span>大正デモクラシー・第一次世界大戦・関東大震災</span></div>
+            <div class="era-cell showa"><b>昭和</b><span class="ey">1926〜1989年</span><span>世界恐慌・戦争・戦後復興と高度成長・沖縄返還</span></div>
+            <div class="era-cell heisei"><b>平成</b><span class="ey">1989〜2019年</span><span>冷戦終結・バブル崩壊・東日本大震災（2011年）</span></div>
           </div>
           <div class="progress-box" style="margin:0 0 16px" aria-live="polite">
-            <div class="row"><span>覚えた年号</span><span><b id="yLearnedCount">0</b> / 44 枚</span></div>
+            <div class="row"><span>覚えた年号</span><span><b id="yLearnedCount">0</b> / 173 枚</span></div>
             <div class="bar"><i id="yLearnedBar"></i></div>
           </div>
         </section>
@@ -396,6 +399,8 @@
           <button class="chip ychip" data-yfilter="sengoku" aria-pressed="false">戦国・安土桃山</button>
           <button class="chip ychip" data-yfilter="edo" aria-pressed="false">江戸</button>
           <button class="chip ychip" data-yfilter="bakumatsu" aria-pressed="false">幕末・明治</button>
+          <button class="chip ychip" data-yfilter="taisho" aria-pressed="false">大正</button>
+          <button class="chip ychip" data-yfilter="showa" aria-pressed="false">昭和・平成</button>
         </div>
         <p class="count-note" id="yCountNote"></p>
         <p class="goro-note">年号カードの語呂合わせも、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます（このページを開いている間だけ有効）。</p>
@@ -621,47 +626,176 @@
         {id:"y57",year:"57",display:"57",group:"kodai",era:"弥生",event:"金印「漢委奴国王」",goro:"ゴ（5）・ナ（7）ッと 金の印",desc:"倭の奴国の王が中国の後漢へ使いを送り、金印をもらう。志賀島で発見された金印が有名。",person:null},
         {id:"y239",year:"239",display:"239",group:"kodai",era:"弥生",event:"卑弥呼、魏へ使いを送る",goro:"ニ（2）サン（3）キュー（9） 卑弥呼は魏へ",desc:"邪馬台国の卑弥呼が魏から「親魏倭王」の称号と銅鏡をもらう。",person:"himiko"},
         {id:"y538",year:"538",display:"538",group:"kodai",era:"飛鳥",event:"仏教伝来",goro:"ゴ（5）ミ（3）ヤ（8） 仏の教え",desc:"百済から仏像と経典が伝わる（552年説もあり）。蘇我氏と物部氏の争いのきっかけに。",person:null},
+        {id:"y593",year:"593",display:"593",group:"kodai",era:"飛鳥",event:"聖徳太子が摂政になる",goro:"ゴクサン（593）摂政は聖徳太子",desc:"推古天皇の摂政となり、冠位十二階・十七条の憲法などで天皇中心の国づくりを進めた。",person:"shotoku"},
         {id:"y603",year:"603",display:"603",group:"kodai",era:"飛鳥",event:"冠位十二階",goro:"ムレ（603）で分ける 12の位",desc:"聖徳太子が実力で役人を12段階に分けた制度。家柄でなく能力で選ぶ考え方。",person:"shotoku"},
         {id:"y604",year:"604",display:"604",group:"kodai",era:"飛鳥",event:"十七条の憲法",goro:"群（むれ）よ（604）納得 十七条",desc:"聖徳太子が役人の心構えを示した十七条の憲法。",person:"shotoku"},
+        {id:"y607",year:"607",display:"607",group:"kodai",era:"飛鳥",event:"遣隋使（小野妹子）",goro:"ム（6）レ（0）ナ（7）妹子、隋へ行く",desc:"聖徳太子が小野妹子を隋へ派遣した。「日出づる処の天子」の国書で知られる。",person:"shotoku"},
+        {id:"y630",year:"630",display:"630",group:"kodai",era:"飛鳥",event:"第一回遣唐使",goro:"ムサ（63）シ レ（0）唐へ出発",desc:"犬上御田鍬らが唐へ出発した第一回遣唐使。894年の廃止まで約260年続いた。",person:null},
         {id:"y645",year:"645",display:"645",group:"kodai",era:"飛鳥",event:"大化の改新",goro:"蒸し米（645）食べて 大改革",desc:"中大兄皇子と中臣鎌足が蘇我入鹿を倒し（乙巳の変）、天皇中心の国づくりへ。",person:"nakanooe"},
+        {id:"y652",year:"652",display:"652",group:"kodai",era:"飛鳥",event:"班田収授法",goro:"ムゴニ（652）田を配り直す",desc:"6年ごとに田を配り直す班田収授法が行われた。律令制の土地制度の柱。",person:null},
+        {id:"y663",year:"663",display:"663",group:"kodai",era:"飛鳥",event:"白村江の戦い",goro:"ムムサン（663）白村江で敗北",desc:"百済を助けるため朝鮮半島へ出兵したが、唐・新羅の連合軍に敗れた戦い。",person:null},
+        {id:"y672",year:"672",display:"672",group:"kodai",era:"飛鳥",event:"壬申の乱",goro:"ムナニ（672）皇位を争う乱",desc:"天智天皇の死後、大海人皇子（天武天皇）と大友皇子が皇位を争った内乱。",person:null},
         {id:"y701",year:"701",display:"701",group:"kodai",era:"奈良",event:"大宝律令",goro:"ナオイ（701）い 律令完成",desc:"律（刑罰）と令（行政）の法典が完成し、律令国家の仕組みが整う。",person:null},
+        {id:"y708",year:"708",display:"708",group:"kodai",era:"奈良",event:"和同開珎",goro:"ナレヤ（708）お金ができた",desc:"日本で最初の流通貨幣とされる銅銭「和同開珎」がつくられた。",person:null},
         {id:"y710",year:"710",display:"710",group:"kodai",era:"奈良",event:"平城京へ遷都",goro:"ナットウ（710） 平城京",desc:"元明天皇が奈良・平城京へ都を移す。唐の長安をまねた都。",person:null},
+        {id:"y712",year:"712",display:"712",group:"kodai",era:"奈良",event:"『古事記』ができる",goro:"ナヒトニ（712）神話を書き残す",desc:"太安万侶が編さんした日本最古の歴史書『古事記』が完成した。",person:null},
+        {id:"y720",year:"720",display:"720",group:"kodai",era:"奈良",event:"『日本書紀』ができる",goro:"ナフレ（720）歴史書が完成",desc:"舎人親王らが編さんした歴史書『日本書紀』が完成。六国史の最初。",person:null},
+        {id:"y723",year:"723",display:"723",group:"kodai",era:"奈良",event:"三世一身法",goro:"ナニサン（723）三代まで私有OK",desc:"開墾を進めるため、新しく開いた土地は三世代まで私有を認めた法。",person:null},
+        {id:"y741",year:"741",display:"741",group:"kodai",era:"奈良",event:"国分寺・国分尼寺建立の詔",goro:"ナヨヒト（741）国ごとに寺を",desc:"聖武天皇が、国ごとに国分寺と国分尼寺を建てる命令を出した。",person:null},
+        {id:"y743",year:"743",display:"743",group:"kodai",era:"奈良",event:"墾田永年私財法",goro:"ナヨサン（743）開いた土地は自分のもの",desc:"新しく開墾した土地は永遠に私有できるとした法。荘園が増えるきっかけになった。",person:null},
         {id:"y752",year:"752",display:"752",group:"kodai",era:"奈良",event:"東大寺大仏の開眼",goro:"ナゴム（752） 大仏さま",desc:"聖武天皇が東大寺に大仏を造る。疫病や災いから国を守る願いを込めた。",person:null},
+        {id:"y753",year:"753",display:"753",group:"kodai",era:"奈良",event:"鑑真が来日",goro:"ナゴミ（753）鑑真やって来た",desc:"唐の僧・鑑真が何度もの失敗の末に来日。律宗を伝え唐招提寺を開いた。",person:null},
         {id:"y794",year:"794",display:"794",group:"kodai",era:"平安",event:"平安京へ遷都",goro:"鳴くよ（794）ウグイス 平安京",desc:"桓武天皇が京都・平安京へ遷都。ここから約390年の平安時代。",person:null},
+        {id:"y797",year:"797",display:"797",group:"kodai",era:"平安",event:"坂上田村麻呂が征夷大将軍に",goro:"ナクナ（797）田村麻呂が将軍",desc:"坂上田村麻呂が征夷大将軍となり、東北の蝦夷平定を進めた。",person:null},
         {id:"y894",year:"894",display:"894",group:"kodai",era:"平安",event:"遣唐使の廃止",goro:"白紙（894）にしよう 遣唐使",desc:"菅原道真の提案で遣唐使を廃止。唐の衰えもあり、国風文化が育つ。",person:null},
+        {id:"y935",year:"935",display:"935",group:"kodai",era:"平安",event:"平将門の乱",goro:"クサゴ（935）将門の反乱",desc:"下総の平将門が関東で反乱を起こし、「新皇」を名乗った。",person:null},
+        {id:"y1016",year:"1016",display:"1016",group:"kodai",era:"平安",event:"藤原道長が摂政に",goro:"トイム（1016）道長が摂政",desc:"藤原道長が摂政となり、摂関政治が全盛期を迎えた。",person:"michinaga"},
+        {id:"y1053",year:"1053",display:"1053",group:"kodai",era:"平安",event:"平等院鳳凰堂ができる",goro:"トゴミ（1053）鳳凰堂キラリ",desc:"藤原頼通（道長の子）が宇治に平等院鳳凰堂を建てた。十円玉のデザインで有名。",person:"michinaga"},
         {id:"y1086",year:"1086",display:"1086",group:"kodai",era:"平安",event:"院政の開始",goro:"一（1）オ（0）ヤ（8）ロー（6） 院政",desc:"白河上皇が天皇を退いた後も政治を行う院政を始める。",person:null},
+        {id:"y1156",year:"1156",display:"1156",group:"kodai",era:"平安",event:"保元の乱",goro:"イイゴロ（1156）保元の乱",desc:"崇徳上皇と後白河天皇が争った乱。武士が政治の表舞台に出るきっかけになった。",person:null},
+        {id:"y1159",year:"1159",display:"1159",group:"kodai",era:"平安",event:"平治の乱",goro:"イイゴク（1159）平治の乱",desc:"平清盛が源義朝を破った乱。平氏の全盛期が始まった。",person:null},
+        {id:"y1167",year:"1167",display:"1167",group:"kodai",era:"平安",event:"平清盛が太政大臣に",goro:"イイムナ（1167）清盛が太政大臣",desc:"平清盛が武士として初めて太政大臣になった。",person:null},
         {id:"y1185",year:"1185",display:"1185",group:"chusei",era:"鎌倉",event:"壇ノ浦の戦い・守護地頭",goro:"イイ（11）ヤッコ（85） 平家滅亡",desc:"源義経らが壇ノ浦で平家を滅ぼす。頼朝は守護・地頭を置いて全国支配へ。",person:"yoritomo"},
         {id:"y1192",year:"1192",display:"1192",group:"chusei",era:"鎌倉",event:"鎌倉幕府の成立",goro:"イイクニ（1192）作ろう 鎌倉幕府",desc:"源頼朝が征夷大将軍に。武士の政権が正式に始まる（1185年成立説も有力）。",person:"yoritomo"},
         {id:"y1221",year:"1221",display:"1221",group:"chusei",era:"鎌倉",event:"承久の乱",goro:"ヒトツ（1）ブ（2）ニ（2）ヒト（1） 承久の乱",desc:"後鳥羽上皇が幕府を倒そうとして敗れる。幕府の力が朝廷を上回った。",person:null},
+        {id:"y1232",year:"1232",display:"1232",group:"chusei",era:"鎌倉",event:"御成敗式目が定められる",goro:"ヒトフミニ（1232）武士の法律",desc:"北条泰時が、武士のための法律「御成敗式目（貞永式目）」を定めた。",person:null},
         {id:"y1274",year:"1274",display:"1274",group:"chusei",era:"鎌倉",event:"文永の役（元寇1回目）",goro:"ヒト（1）フナ（27）ヨ（4） 元が来た",desc:"モンゴル帝国（元）が博多に襲来。この後、北条時宗は元寇防塁を築かせる。",person:"tokimune",term:true},
         {id:"y1281",year:"1281",display:"1281",group:"chusei",era:"鎌倉",event:"弘安の役（元寇2回目）",goro:"ヒト（1）ニ（2）ヤ（8）イ（1） 弘安",desc:"元が再び大軍で襲来。元寇防塁が上陸を阻み、台風で元の船団は壊滅。",person:"tokimune",term:true},
+        {id:"y1297",year:"1297",display:"1297",group:"chusei",era:"鎌倉",event:"永仁の徳政令",goro:"ヒトフクナ（1297）借金チャラに",desc:"幕府が御家人の借金を帳消しにする永仁の徳政令を出した。",person:null},
         {id:"y1333",year:"1333",display:"1333",group:"chusei",era:"鎌倉末",event:"鎌倉幕府の滅亡",goro:"イサンサン（1333） 鎌倉終わる",desc:"足利尊氏・新田義貞らが鎌倉幕府を倒す。後醍醐天皇の建武の新政へ。",person:"takauji"},
+        {id:"y1334",year:"1334",display:"1334",group:"chusei",era:"建武の新政",event:"後醍醐天皇が建武の新政",goro:"ヒトミミヨ（1334）後醍醐の新政",desc:"後醍醐天皇が天皇中心の政治「建武の新政」を始めたが、約2年で崩壊した。",person:null},
         {id:"y1338",year:"1338",display:"1338",group:"chusei",era:"室町",event:"室町幕府の成立",goro:"イザ（13）サワ（38）げ 室町幕府",desc:"足利尊氏が征夷大将軍になり京都に幕府を開く。南北朝時代へ。",person:"takauji"},
         {id:"y1392",year:"1392",display:"1392",group:"chusei",era:"室町",event:"南北朝の合一",goro:"イザ（13）クニ（92）を 一つに",desc:"足利義満が南朝と北朝を統一。室町幕府の全盛期へ。",person:"yoshimitsu"},
         {id:"y1404",year:"1404",display:"1404",group:"chusei",era:"室町",event:"勘合貿易（日明貿易）開始",goro:"ヒト（1）ヨ（4）レ（0）ヨ（4） 明と貿易",desc:"足利義満が明と勘合符を使った貿易を始める。",person:"yoshimitsu"},
+        {id:"y1428",year:"1428",display:"1428",group:"chusei",era:"室町",event:"正長の土一揆",goro:"ヒトヨフヤ（1428）土一揆おこる",desc:"農民が徳政（借金帳消し）を求めて起こした正長の土一揆。全国に広がった。",person:null},
+        {id:"y1429",year:"1429",display:"1429",group:"chusei",era:"室町",event:"琉球王国が成立",goro:"ヒトヨフク（1429）琉球の王",desc:"尚巴志が三山を統一し、琉球王国が成立した。",person:null},
         {id:"y1467",year:"1467",display:"1467",group:"sengoku",era:"室町・戦国",event:"応仁の乱",goro:"ヒト（1）ヨ（4）ムナ（67）しい 内乱",desc:"足利義政の後継ぎ争いから大乱に。戦国時代の始まりとされる。",person:"yoshimasa"},
+        {id:"y1485",year:"1485",display:"1485",group:"sengoku",era:"室町・戦国",event:"山城国一揆",goro:"ヒトヨヤゴ（1485）山城の一揆",desc:"山城国の農民らが守護大名を追い出した一揆。8年間にわたり自治を行った。",person:null},
+        {id:"y1488",year:"1488",display:"1488",group:"sengoku",era:"室町・戦国",event:"加賀の一向一揆",goro:"ヒトヨヤヤ（1488）一向一揆",desc:"加賀で一向宗の信者らが守護を倒した一揆。「百姓の持ちたる国」と呼ばれた。",person:null},
         {id:"y1543",year:"1543",display:"1543",group:"sengoku",era:"戦国",event:"鉄砲伝来",goro:"ヒト（1）ゴ（5）ヨ（4）サン（3） 鉄砲ドン",desc:"ポルトガル人が種子島へ鉄砲を伝える。戦い方が大きく変わる。",person:null},
         {id:"y1549",year:"1549",display:"1549",group:"sengoku",era:"戦国",event:"キリスト教伝来",goro:"ヒト（1）ゴ（5）ヨ（4）ク（9） ザビエル",desc:"フランシスコ・ザビエルが鹿児島に来てキリスト教を伝える。",person:null},
         {id:"y1560",year:"1560",display:"1560",group:"sengoku",era:"戦国",event:"桶狭間の戦い",goro:"ヒト（1）ゴ（5）ロ（6）レ（0） 桶狭間",desc:"織田信長が大軍の今川義元を奇襲で破る。",person:"nobunaga"},
+        {id:"y1573",year:"1573",display:"1573",group:"sengoku",era:"安土桃山",event:"室町幕府が滅亡",goro:"ヒトゴナミ（1573）室町終わる",desc:"織田信長が足利義昭を京都から追放し、室町幕府が滅亡した。",person:"nobunaga"},
         {id:"y1575",year:"1575",display:"1575",group:"sengoku",era:"戦国",event:"長篠の戦い",goro:"ヒト（1）ゴ（5）ナ（7）ゴ（5） 長篠",desc:"信長・家康連合軍が鉄砲隊で武田勝頼の騎馬隊に勝利。",person:"nobunaga"},
         {id:"y1582",year:"1582",display:"1582",group:"sengoku",era:"安土桃山",event:"本能寺の変",goro:"ヒト（1）ゴ（5）ヤ（8）ニ（2） 本能寺",desc:"明智光秀が織田信長を本能寺で討つ。秀吉が中国大返しで光秀を破る。",person:"hideyoshi"},
+        {id:"y1582b",year:"1582",display:"1582",group:"sengoku",era:"安土桃山",event:"太閤検地が始まる",goro:"ヒトゴヤニ（1582）検地スタート",desc:"豊臣秀吉が太閤検地を開始。全国の田畑を測り、収穫量を石高で表す仕組みにした。",person:"hideyoshi"},
         {id:"y1588",year:"1588",display:"1588",group:"sengoku",era:"安土桃山",event:"刀狩",goro:"ヒト（1）ゴ（5）ヤ（8）ヤ（8） 刀狩",desc:"豊臣秀吉が農民から刀を取り上げ、武士と農民の身分を分ける。",person:"hideyoshi"},
         {id:"y1590",year:"1590",display:"1590",group:"sengoku",era:"安土桃山",event:"全国統一の完成",goro:"ヒト（1）ゴ（5）ク（9）レ（0） 統一",desc:"秀吉が小田原の北条氏を滅ぼし、全国統一を完成させる。",person:"hideyoshi"},
+        {id:"y1592",year:"1592",display:"1592",group:"sengoku",era:"安土桃山",event:"文禄の役（朝鮮出兵）",goro:"ヒトゴクニ（1592）朝鮮へ出兵",desc:"秀吉が明の征服を目指して朝鮮へ出兵した文禄の役。",person:"hideyoshi"},
+        {id:"y1597",year:"1597",display:"1597",group:"sengoku",era:"安土桃山",event:"慶長の役",goro:"ヒトゴクナ（1597）再び朝鮮へ",desc:"秀吉が再び朝鮮へ出兵した慶長の役。秀吉の死によって撤退した。",person:"hideyoshi"},
         {id:"y1600",year:"1600",display:"1600",group:"edo",era:"江戸",event:"関ヶ原の戦い",goro:"ヒト（1）ムレ（6）レ（0）レ（0） 関ヶ原",desc:"徳川家康の東軍が石田三成の西軍に勝利。天下分け目の戦い。",person:"ieyasu"},
         {id:"y1603",year:"1603",display:"1603",group:"edo",era:"江戸",event:"江戸幕府の成立",goro:"家康（イ・エ）さん（3） 江戸幕府",desc:"家康が征夷大将軍になり江戸幕府を開く。265年の江戸時代へ。",person:"ieyasu"},
         {id:"y1615",year:"1615",display:"1615",group:"edo",era:"江戸",event:"武家諸法度・大坂夏の陣",goro:"ヒト（1）ム（6）ヒト（1）ゴ（5） 法度",desc:"秀忠が大名統制の武家諸法度を制定。同年、豊臣家が滅亡。",person:"hidetada"},
+        {id:"y1635",year:"1635",display:"1635",group:"edo",era:"江戸",event:"参勤交代の制度化",goro:"ヒトムミゴ（1635）大名は江戸へ",desc:"3代将軍・家光の代に、参勤交代が武家諸法度に加えられ制度として固まった。",person:"iemitsu"},
+        {id:"y1637",year:"1637",display:"1637",group:"edo",era:"江戸",event:"島原・天草一揆",goro:"ヒトムミナ（1637）天草四郎の一揆",desc:"九州の島原・天草でキリシタン農民らが起こした大一揆。指導者は天草四郎。",person:"iemitsu"},
         {id:"y1639",year:"1639",display:"1639",group:"edo",era:"江戸",event:"鎖国の完成",goro:"ヒト（1）ム（6）サン（3）キュー（9） 鎖国",desc:"家光がポルトガル船の来航を禁止。出島でオランダ・中国とのみ貿易。",person:"iemitsu"},
+        {id:"y1641",year:"1641",display:"1641",group:"edo",era:"江戸",event:"オランダ商館を出島へ移す",goro:"ヒトムヨヒト（1641）出島の商館",desc:"オランダ商館が平戸から長崎の出島へ移され、鎖国の体制が固まった。",person:"iemitsu"},
+        {id:"y1649",year:"1649",display:"1649",group:"edo",era:"江戸",event:"慶安の御触書",goro:"ヒトムヨク（1649）農民への触書",desc:"幕府が農民の暮らしや年貢について細かく定めた慶安の御触書を出した。",person:"iemitsu"},
+        {id:"y1687",year:"1687",display:"1687",group:"edo",era:"江戸",event:"生類憐みの令",goro:"ヒトムヤナ（1687）犬を大事に",desc:"5代将軍・綱吉が生類憐みの令を出した頃。犬の保護が手厚く「犬公方」と呼ばれた。",person:"tsunayoshi"},
+        {id:"y1709",year:"1709",display:"1709",group:"edo",era:"江戸",event:"新井白石の政治が始まる",goro:"ヒトナレク（1709）白石の政治",desc:"6代将軍・家宣に仕えた新井白石が政治を進めた。のちに「正徳の治」と呼ばれる。",person:null},
         {id:"y1716",year:"1716",display:"1716",group:"edo",era:"江戸",event:"享保の改革（吉宗就任）",goro:"ヒト（1）ナ（7）ヒト（1）ム（6） 改革",desc:"紀州出身の徳川吉宗が8代将軍に。質素倹約と目安箱の享保の改革。",person:"yoshimune"},
+        {id:"y1772",year:"1772",display:"1772",group:"edo",era:"江戸",event:"田沼意次が老中になる",goro:"ヒトナナニ（1772）田沼が老中",desc:"田沼意次が老中となり、商人の力を利用する政策を進めた（田沼時代）。",person:null},
+        {id:"y1774",year:"1774",display:"1774",group:"edo",era:"江戸",event:"『解体新書』が出版される",goro:"ヒトナナヨ（1774）玄白の解体新書",desc:"杉田玄白・前野良沢らがオランダの解剖書を翻訳した『解体新書』を出版した。",person:null},
+        {id:"y1776",year:"1776",display:"1776",group:"edo",era:"江戸",event:"アメリカ独立宣言",goro:"ヒトナナム（1776）アメリカ独立",desc:"アメリカの13植民地が独立を宣言し、アメリカ合衆国が誕生した。",person:null},
+        {id:"y1787",year:"1787",display:"1787",group:"edo",era:"江戸",event:"寛政の改革が始まる",goro:"ヒトナヤナ（1787）定信の改革",desc:"老中・松平定信が寛政の改革を始めた。質素倹約を進める三大改革の一つ。",person:null},
+        {id:"y1825",year:"1825",display:"1825",group:"edo",era:"江戸",event:"異国船打払令",goro:"ヒトヤフゴ（1825）外国船は打ち払え",desc:"幕府が、外国船を見たら打ち払う異国船打払令を出した。",person:null},
+        {id:"y1837",year:"1837",display:"1837",group:"edo",era:"江戸",event:"大塩平八郎の乱",goro:"ヒトヤミナ（1837）大塩の乱",desc:"元幕府の役人・大塩平八郎が、飢饉に苦しむ人々の救済を求めて大阪で反乱を起こした。",person:null},
+        {id:"y1839",year:"1839",display:"1839",group:"edo",era:"江戸",event:"蛮社の獄",goro:"ヒトヤミク（1839）蘭学者が処罰",desc:"渡辺崋山・高野長英ら蘭学者が、幕府を批判したとして処罰された事件。",person:null},
+        {id:"y1840",year:"1840",display:"1840",group:"edo",era:"江戸",event:"アヘン戦争が始まる",goro:"ヒトヤヨレ（1840）アヘン戦争",desc:"イギリスと清（中国）の間でアヘン戦争が始まった。日本の知識人に衝撃を与えた。",person:null},
+        {id:"y1841",year:"1841",display:"1841",group:"edo",era:"江戸",event:"天保の改革が始まる",goro:"ヒトヤヨヒト（1841）忠邦の改革",desc:"老中・水野忠邦が天保の改革を始めた。三大改革の3番目。",person:null},
+        {id:"y1842",year:"1842",display:"1842",group:"edo",era:"江戸",event:"アヘン戦争で清が敗北（南京条約）",goro:"ヒトヤヨニ（1842）南京条約",desc:"アヘン戦争で清が敗れ、イギリスと南京条約を結んで香港を譲った。",person:null},
         {id:"y1853",year:"1853",display:"1853",group:"bakumatsu",era:"幕末",event:"ペリー来航",goro:"ヒト（1）ヤ（8）ゴ（5）サン（3） 黒船",desc:"アメリカのペリーが浦賀に黒船で来航し開国を求める。幕末の始まり。",person:null},
+        {id:"y1854",year:"1854",display:"1854",group:"bakumatsu",era:"幕末",event:"日米和親条約",goro:"ヒトヤゴヨ（1854）和親条約",desc:"ペリーと日米和親条約を結び、下田と函館の2港を開いた。",person:null},
         {id:"y1858",year:"1858",display:"1858",group:"bakumatsu",era:"幕末",event:"日米修好通商条約",goro:"ヒト（1）ヤ（8）ゴ（5）ヤ（8） 通商条約",desc:"函館・横浜など5港を開く不平等条約。安政の大獄も始まる。",person:null},
+        {id:"y1858b",year:"1858",display:"1858",group:"bakumatsu",era:"幕末",event:"安政の大獄が始まる",goro:"ヒトヤゴヤ（1858）大獄で弾圧",desc:"大老・井伊直弼が条約反対派を厳しく処罰した安政の大獄。吉田松陰らが処刑された。",person:null},
+        {id:"y1860",year:"1860",display:"1860",group:"bakumatsu",era:"幕末",event:"桜田門外の変",goro:"ヒトヤムレ（1860）桜田門で暗殺",desc:"水戸浪士らが大老・井伊直弼を江戸城の桜田門外で暗殺した事件。",person:null},
+        {id:"y1861",year:"1861",display:"1861",group:"bakumatsu",era:"幕末",event:"アメリカ南北戦争",goro:"ヒトヤムヒト（1861）南北戦争",desc:"アメリカで南北戦争が始まった。1865年に北軍が勝利し、奴隷制は廃止された。",person:null},
+        {id:"y1862",year:"1862",display:"1862",group:"bakumatsu",era:"幕末",event:"生麦事件",goro:"ヒトヤムニ（1862）生麦事件",desc:"薩摩藩の大名行列を横切ったイギリス人が殺傷された事件。薩英戦争の原因になった。",person:null},
         {id:"y1866",year:"1866",display:"1866",group:"bakumatsu",era:"幕末",event:"薩長同盟",goro:"ヒト（1）ヤ（8）ム（6）ム（6） 同盟",desc:"坂本龍馬の仲介で薩摩と長州が手を結ぶ。討幕の流れが決定的に。",person:"ryoma"},
         {id:"y1867",year:"1867",display:"1867",group:"bakumatsu",era:"幕末",event:"大政奉還",goro:"ヒト（1）ヤ（8）ム（6）ナ（7） 奉還",desc:"徳川慶喜が政権を朝廷に返す。江戸幕府265年が終わる。",person:"yoshinobu"},
+        {id:"y1867b",year:"1867",display:"1867",group:"bakumatsu",era:"幕末",event:"王政復古の大号令",goro:"ヒトヤムナ（1867）王政復古",desc:"岩倉具視らが王政復古の大号令を出し、天皇中心の新政府の樹立を宣言した。",person:"iwakura"},
         {id:"y1868",year:"1868",display:"1868",group:"bakumatsu",era:"明治",event:"明治維新・五箇条の御誓文",goro:"ヒト（1）ヤ（8）ム（6）ヤ（8） 維新",desc:"明治新政府が発足。江戸城無血開城、五箇条の御誓文、明治と改元。",person:"saigo"},
+        {id:"y1868b",year:"1868",display:"1868",group:"bakumatsu",era:"幕末",event:"戊辰戦争が始まる",goro:"ヒトヤムヤ（1868）戊辰の戦い",desc:"旧幕府軍と新政府軍が戦った戊辰戦争が始まった。翌1869年に新政府軍の勝利で終わった。",person:"saigo"},
+        {id:"y1869",year:"1869",display:"1869",group:"bakumatsu",era:"明治",event:"版籍奉還",goro:"ヒトヤムク（1869）土地と人を返す",desc:"藩主が土地（版）と人民（籍）を朝廷に返した版籍奉還。廃藩置県への第一歩。",person:"kido"},
         {id:"y1871",year:"1871",display:"1871",group:"bakumatsu",era:"明治",event:"廃藩置県・岩倉使節団",goro:"ヒト（1）ヤ（8）ナ（7）ヒト（1） 県に",desc:"藩を廃止して県を置く。同年、岩倉具視らの使節団が欧米へ出発。",person:"iwakura"},
+        {id:"y1872",year:"1872",display:"1872",group:"bakumatsu",era:"明治",event:"学制が公布される",goro:"ヒトヤナニ（1872）学校へ行こう",desc:"政府が学制を公布し、全国に小学校を作って近代教育を始めた。",person:null},
+        {id:"y1872b",year:"1872",display:"1872",group:"bakumatsu",era:"明治",event:"富岡製糸場ができる",goro:"ヒトヤナニ（1872）富岡で生糸づくり",desc:"群馬に官営の富岡製糸場ができ、フランスの技術を取り入れて生糸生産が始まった。",person:null},
         {id:"y1873",year:"1873",display:"1873",group:"bakumatsu",era:"明治",event:"地租改正・徴兵令",goro:"ヒト（1）ヤ（8）ナ（7）サン（3） 改正",desc:"税を米から現金（地価の3％）へ。20歳男子に兵役の義務も。",person:"okubo"},
+        {id:"y1874",year:"1874",display:"1874",group:"bakumatsu",era:"明治",event:"民撰議院設立建白書",goro:"ヒトヤナヨ（1874）板垣の建白書",desc:"板垣退助らが民撰議院設立建白書を提出した。自由民権運動の出発点。",person:"itagaki"},
+        {id:"y1875",year:"1875",display:"1875",group:"bakumatsu",era:"明治",event:"樺太・千島交換条約",goro:"ヒトヤナゴ（1875）千島と交換",desc:"ロシアと樺太・千島交換条約を結び、千島列島が日本の領土になった。",person:null},
+        {id:"y1876",year:"1876",display:"1876",group:"bakumatsu",era:"明治",event:"日朝修好条規",goro:"ヒトヤナム（1876）朝鮮と条規",desc:"朝鮮と日朝修好条規を結んだ。朝鮮にとって不平等な内容を含んでいた。",person:null},
         {id:"y1877",year:"1877",display:"1877",group:"bakumatsu",era:"明治",event:"西南戦争",goro:"ヒト（1）ヤ（8）ナ（7）ナ（7） 西南",desc:"西郷隆盛が政府軍と戦って敗れる。最大で最後の士族の反乱。",person:"saigo"},
         {id:"y1885",year:"1885",display:"1885",group:"bakumatsu",era:"明治",event:"内閣制度・伊藤博文 初代首相",goro:"ヒト（1）ヤ（8）ヤ（8）ゴ（5） 内閣",desc:"伊藤博文が初代内閣総理大臣に。内閣制度が始まる。",person:"ito"},
-        {id:"y1889",year:"1889",display:"1889",group:"bakumatsu",era:"明治",event:"大日本帝国憲法（明治憲法）",goro:"ヒト（1）ヤ（8）ヤ（8）ク（9） 憲法",desc:"伊藤博文らが中心となり明治憲法を発布。翌1890年に帝国議会が開かれる。",person:"ito"}
+        {id:"y1886",year:"1886",display:"1886",group:"bakumatsu",era:"明治",event:"ノルマントン号事件",goro:"ヒトヤヤム（1886）ノルマントン号",desc:"イギリス船ノルマントン号の沈没で、船長が領事裁判で軽い罪になった事件。条約改正の世論が高まった。",person:null},
+        {id:"y1889",year:"1889",display:"1889",group:"bakumatsu",era:"明治",event:"大日本帝国憲法（明治憲法）",goro:"ヒト（1）ヤ（8）ヤ（8）ク（9） 憲法",desc:"伊藤博文らが中心となり明治憲法を発布。翌1890年に帝国議会が開かれる。",person:"ito"},
+        {id:"y1890",year:"1890",display:"1890",group:"bakumatsu",era:"明治",event:"第一回帝国議会",goro:"ヒトヤクレ（1890）初の帝国議会",desc:"第一回帝国議会が開かれた。衆議院と貴族院の二院制。",person:"ito"},
+        {id:"y1894",year:"1894",display:"1894",group:"bakumatsu",era:"明治",event:"甲午農民戦争",goro:"ヒトヤクヨ（1894）朝鮮で農民戦争",desc:"朝鮮で甲午農民戦争（東学党の乱）が起こり、日清戦争のきっかけになった。",person:null},
+        {id:"y1894b",year:"1894",display:"1894",group:"bakumatsu",era:"明治",event:"日英通商航海条約（領事裁判権撤廃）",goro:"ヒトヤクヨ（1894）領事裁判権が消える",desc:"イギリスと新しく通商航海条約を結び、領事裁判権の撤廃が決まった（実施は1899年）。",person:null},
+        {id:"y1894c",year:"1894",display:"1894",group:"bakumatsu",era:"明治",event:"日清戦争が始まる",goro:"ヒトヤクヨ（1894）日清戦争",desc:"朝鮮をめぐって日本と清が戦った日清戦争が始まった。日本が勝利した。",person:null},
+        {id:"y1895",year:"1895",display:"1895",group:"bakumatsu",era:"明治",event:"下関条約",goro:"ヒトヤクゴ（1895）下関で講和",desc:"日清戦争の講和条約。下関で結ばれ、日本は遼東半島や台湾などを得た。",person:"ito"},
+        {id:"y1895b",year:"1895",display:"1895",group:"bakumatsu",era:"明治",event:"三国干渉",goro:"ヒトヤクゴ（1895）三国干渉",desc:"ロシア・ドイツ・フランスが、遼東半島を清に返すよう日本に求めた三国干渉。日本は受け入れた。",person:null},
+        {id:"y1901",year:"1901",display:"1901",group:"bakumatsu",era:"明治",event:"八幡製鉄所が操業開始",goro:"ヒトクレヒト（1901）八幡で鉄づくり",desc:"福岡に官営の八幡製鉄所が操業を開始した。日本の重工業の中心になった。",person:null},
+        {id:"y1902",year:"1902",display:"1902",group:"bakumatsu",era:"明治",event:"日英同盟",goro:"ヒトクレニ（1902）日英同盟",desc:"ロシアに対抗するため、イギリスと日英同盟を結んだ。",person:null},
+        {id:"y1904",year:"1904",display:"1904",group:"bakumatsu",era:"明治",event:"日露戦争が始まる",goro:"ヒトクレヨ（1904）日露戦争",desc:"満州と朝鮮をめぐってロシアと戦う日露戦争が始まった。",person:null},
+        {id:"y1905",year:"1905",display:"1905",group:"bakumatsu",era:"明治",event:"ポーツマス条約",goro:"ヒトクレゴ（1905）ポーツマス条約",desc:"日露戦争の講和条約。アメリカの仲介で結ばれたが、賠償金は得られなかった。",person:null},
+        {id:"y1910",year:"1910",display:"1910",group:"bakumatsu",era:"明治",event:"韓国併合",goro:"ヒトクヒトレ（1910）韓国併合",desc:"韓国併合条約により、朝鮮半島が日本の植民地となった。",person:null},
+        {id:"y1911",year:"1911",display:"1911",group:"bakumatsu",era:"明治",event:"関税自主権を完全に回復",goro:"ヒトクヒトヒト（1911）関税自主権もどる",desc:"関税自主権を完全に取り戻し、不平等条約の改正が完了した。",person:null},
+        {id:"y1911b",year:"1911",display:"1911",group:"bakumatsu",era:"明治",event:"辛亥革命",goro:"ヒトクヒトヒト（1911）清がほろぶ",desc:"中国で辛亥革命が起こり、清が滅んで中華民国が誕生した。",person:null},
+        {id:"y1912",year:"1912",display:"1912",group:"taisho",era:"大正",event:"第一次護憲運動",goro:"ヒトクヒトニ（1912）護憲運動",desc:"桂内閣のやり方に反対する第一次護憲運動が起こり、内閣が倒れた（大正政変）。",person:null},
+        {id:"y1914",year:"1914",display:"1914",group:"taisho",era:"大正",event:"第一次世界大戦が始まる",goro:"ヒトクヒトヨ（1914）世界大戦",desc:"ヨーロッパで第一次世界大戦が始まった。日本も日英同盟を理由に参戦した。",person:null},
+        {id:"y1915",year:"1915",display:"1915",group:"taisho",era:"大正",event:"二十一カ条の要求",goro:"ヒトクヒトゴ（1915）二十一カ条",desc:"日本が中国政府に二十一カ条の要求を突きつけ、中国で反日運動が広がった。",person:null},
+        {id:"y1917",year:"1917",display:"1917",group:"taisho",era:"大正",event:"ロシア革命",goro:"ヒトクヒトナ（1917）ロシア革命",desc:"ロシアで革命が起こり、世界初の社会主義政権が誕生した。",person:null},
+        {id:"y1918",year:"1918",display:"1918",group:"taisho",era:"大正",event:"米騒動",goro:"ヒトクヒトヤ（1918）米騒動",desc:"米の値上がりに抗議する米騒動が富山から全国に広がった。",person:null},
+        {id:"y1918b",year:"1918",display:"1918",group:"taisho",era:"大正",event:"シベリア出兵",goro:"ヒトクヒトヤ（1918）シベリアへ",desc:"ロシア革命への干渉のため、日本がシベリアへ出兵した。",person:null},
+        {id:"y1919",year:"1919",display:"1919",group:"taisho",era:"大正",event:"三・一独立運動",goro:"ヒトクヒトク（1919）三・一運動",desc:"朝鮮で、日本の植民地支配に抗議する三・一独立運動が広がった。",person:null},
+        {id:"y1919b",year:"1919",display:"1919",group:"taisho",era:"大正",event:"五・四運動",goro:"ヒトクヒトク（1919）五・四運動",desc:"中国で、日本の進出に抗議する五・四運動が起こった。",person:null},
+        {id:"y1919c",year:"1919",display:"1919",group:"taisho",era:"大正",event:"ベルサイユ条約",goro:"ヒトクヒトク（1919）ベルサイユ条約",desc:"第一次世界大戦の講和条約・ベルサイユ条約が結ばれた。",person:null},
+        {id:"y1920",year:"1920",display:"1920",group:"taisho",era:"大正",event:"国際連盟が設立される",goro:"ヒトクフレ（1920）国際連盟できる",desc:"平和を守るための国際機関・国際連盟が設立された。日本も常任理事国になった。",person:null},
+        {id:"y1921",year:"1921",display:"1921",group:"taisho",era:"大正",event:"ワシントン会議",goro:"ヒトクフヒト（1921）ワシントン会議",desc:"ワシントン会議で海軍の軍縮などが話し合われ、太平洋の新しい秩序が決まった。",person:null},
+        {id:"y1922",year:"1922",display:"1922",group:"taisho",era:"大正",event:"全国水平社が設立される",goro:"ヒトクフフ（1922）水平社できる",desc:"部落差別の撤廃を目指す全国水平社が京都で結成された。",person:null},
+        {id:"y1922b",year:"1922",display:"1922",group:"taisho",era:"大正",event:"ソ連が成立する",goro:"ヒトクフフ（1922）ソ連たんじょう",desc:"ソビエト社会主義共和国連邦（ソ連）が成立した。",person:null},
+        {id:"y1923",year:"1923",display:"1923",group:"taisho",era:"大正",event:"関東大震災",goro:"ヒトクフミ（1923）関東大震災",desc:"関東大震災が起こり、東京・横浜を中心に10万人以上の犠牲者が出た。",person:null},
+        {id:"y1925",year:"1925",display:"1925",group:"taisho",era:"大正",event:"治安維持法",goro:"ヒトクフゴ（1925）治安維持法",desc:"共産主義を取り締まる治安維持法が制定された。普通選挙法と同じ年に出された法律。",person:null},
+        {id:"y1925b",year:"1925",display:"1925",group:"taisho",era:"大正",event:"普通選挙法",goro:"ヒトクフゴ（1925）普通選挙へ",desc:"普通選挙法が成立し、25歳以上の男子すべてに選挙権が与えられた。",person:null},
+        {id:"y1929",year:"1929",display:"1929",group:"showa",era:"昭和",event:"世界恐慌",goro:"ヒトクフク（1929）世界恐慌",desc:"アメリカの株価暴落から世界恐慌が始まり、日本も昭和恐慌に苦しんだ。",person:null},
+        {id:"y1931",year:"1931",display:"1931",group:"showa",era:"昭和",event:"満州事変",goro:"ヒトクミヒト（1931）満州事変",desc:"関東軍が柳条湖事件をきっかけに満州を占領した。国際連盟は日本の行動を批判した。",person:null},
+        {id:"y1932",year:"1932",display:"1932",group:"showa",era:"昭和",event:"五・一五事件",goro:"ヒトクミニ（1932）五・一五事件",desc:"海軍の青年将校らが犬養毅首相を暗殺した事件。政党政治が終わるきっかけになった。",person:null},
+        {id:"y1936",year:"1936",display:"1936",group:"showa",era:"昭和",event:"二・二六事件",goro:"ヒトクミム（1936）二・二六事件",desc:"陸軍の青年将校らが起こしたクーデター事件。軍部の発言力がさらに強まった。",person:null},
+        {id:"y1937",year:"1937",display:"1937",group:"showa",era:"昭和",event:"盧溝橋事件・日中戦争の開始",goro:"ヒトクミナ（1937）日中戦争",desc:"盧溝橋事件をきっかけに日中戦争が始まった。戦争は長く泥沼化した。",person:null},
+        {id:"y1938",year:"1938",display:"1938",group:"showa",era:"昭和",event:"国家総動員法",goro:"ヒトクミヤ（1938）総動員法",desc:"国のすべての力を戦争に動員できるようにした国家総動員法が制定された。",person:null},
+        {id:"y1939",year:"1939",display:"1939",group:"showa",era:"昭和",event:"第二次世界大戦が始まる",goro:"ヒトクミク（1939）第二次大戦",desc:"ドイツのポーランド侵攻によって第二次世界大戦が始まった。",person:null},
+        {id:"y1940",year:"1940",display:"1940",group:"showa",era:"昭和",event:"日独伊三国同盟",goro:"ヒトクヨレ（1940）三国同盟",desc:"日本・ドイツ・イタリアの3国が日独伊三国同盟を結んだ。",person:null},
+        {id:"y1941",year:"1941",display:"1941",group:"showa",era:"昭和",event:"日ソ中立条約",goro:"ヒトクヨヒト（1941）日ソ中立",desc:"日本とソ連が、お互いに中立を守る日ソ中立条約を結んだ。",person:null},
+        {id:"y1941b",year:"1941",display:"1941",group:"showa",era:"昭和",event:"太平洋戦争が始まる",goro:"ヒトクヨヒト（1941）真珠湾攻撃",desc:"日本軍の真珠湾攻撃によって太平洋戦争が始まった。",person:null},
+        {id:"y1942",year:"1942",display:"1942",group:"showa",era:"昭和",event:"ミッドウェー海戦",goro:"ヒトクヨニ（1942）ミッドウェー大敗",desc:"ミッドウェー海戦で日本海軍が主力空母4隻を失い、太平洋戦争の流れが変わった。",person:null},
+        {id:"y1945",year:"1945",display:"1945",group:"showa",era:"昭和",event:"ヤルタ会談",goro:"ヒトクヨゴ（1945）ヤルタ会談",desc:"アメリカ・イギリス・ソ連の首脳が戦後の処理を話し合ったヤルタ会談。",person:null},
+        {id:"y1945b",year:"1945",display:"1945",group:"showa",era:"昭和",event:"ポツダム宣言の受諾・降伏",goro:"ヒトクヨゴ（1945）ポツダム受諾",desc:"日本がポツダム宣言を受け入れて降伏し、第二次世界大戦が終わった。",person:null},
+        {id:"y1945c",year:"1945",display:"1945",group:"showa",era:"昭和",event:"国際連合が成立する",goro:"ヒトクヨゴ（1945）国連できる",desc:"平和を守るための国際機関・国際連合が成立した。",person:null},
+        {id:"y1946",year:"1946",display:"1946",group:"showa",era:"昭和",event:"農地改革",goro:"ヒトクヨム（1946）農地改革",desc:"GHQの指導で農地改革が行われ、小作農の多くが自分の田畑を持つ自作農になった。",person:null},
+        {id:"y1946b",year:"1946",display:"1946",group:"showa",era:"昭和",event:"日本国憲法が公布される",goro:"ヒトクヨム（1946）新しい憲法",desc:"日本国憲法が公布された（施行は1947年）。国民主権・平和主義・基本的人権の尊重が柱。",person:null},
+        {id:"y1948",year:"1948",display:"1948",group:"showa",era:"昭和",event:"世界人権宣言",goro:"ヒトクヨヤ（1948）人権宣言",desc:"国際連合で世界人権宣言が採択された。",person:null},
+        {id:"y1949",year:"1949",display:"1949",group:"showa",era:"昭和",event:"中華人民共和国が成立する",goro:"ヒトクヨク（1949）中国が成立",desc:"毛沢東が中華人民共和国の成立を宣言した。",person:null},
+        {id:"y1950",year:"1950",display:"1950",group:"showa",era:"昭和",event:"朝鮮戦争が始まる",goro:"ヒトクゴレ（1950）朝鮮戦争",desc:"朝鮮半島で朝鮮戦争が始まった。日本では特需で経済が回復した。",person:null},
+        {id:"y1950b",year:"1950",display:"1950",group:"showa",era:"昭和",event:"警察予備隊が創設される",goro:"ヒトクゴレ（1950）警察予備隊",desc:"朝鮮戦争を受けて警察予備隊が創設された。のちの自衛隊の前身。",person:null},
+        {id:"y1951",year:"1951",display:"1951",group:"showa",era:"昭和",event:"サンフランシスコ平和条約に調印",goro:"ヒトクゴヒト（1951）平和条約に調印",desc:"サンフランシスコ平和条約に調印し、日本の独立回復が決まった（発効は1952年）。",person:null},
+        {id:"y1951b",year:"1951",display:"1951",group:"showa",era:"昭和",event:"日米安全保障条約",goro:"ヒトクゴヒト（1951）日米安保も調印",desc:"平和条約と同時に日米安全保障条約が結ばれ、アメリカ軍の日本駐留が続くことになった。",person:null},
+        {id:"y1954",year:"1954",display:"1954",group:"showa",era:"昭和",event:"自衛隊が発足する",goro:"ヒトクゴヨ（1954）自衛隊発足",desc:"警察予備隊などから発展し、陸上・海上・航空の自衛隊が発足した。",person:null},
+        {id:"y1955",year:"1955",display:"1955",group:"showa",era:"昭和",event:"アジア・アフリカ会議（バンドン会議）",goro:"ヒトクゴゴ（1955）バンドン会議",desc:"インドネシアのバンドンでアジア・アフリカ会議が開かれ、平和共存がうたわれた。",person:null},
+        {id:"y1956",year:"1956",display:"1956",group:"showa",era:"昭和",event:"日ソ共同宣言",goro:"ヒトクゴム（1956）日ソ共同宣言",desc:"日ソ共同宣言でソ連との国交が回復し、日本の国際連合への加盟も実現した。",person:null},
+        {id:"y1962",year:"1962",display:"1962",group:"showa",era:"昭和",event:"キューバ危機",goro:"ヒトクムニ（1962）キューバ危機",desc:"キューバにソ連のミサイルが置かれ、アメリカとソ連が核戦争寸前になった危機。",person:null},
+        {id:"y1964",year:"1964",display:"1964",group:"showa",era:"昭和",event:"東京オリンピック",goro:"ヒトクムヨ（1964）東京五輪",desc:"アジアで初めての東京オリンピックが開催された。東海道新幹線も開業した年。",person:null},
+        {id:"y1965",year:"1965",display:"1965",group:"showa",era:"昭和",event:"アメリカがベトナム戦争に本格介入",goro:"ヒトクムゴ（1965）ベトナム介入",desc:"アメリカが北ベトナムへの爆撃を本格化させ、ベトナム戦争に本格的に介入した。",person:null},
+        {id:"y1967",year:"1967",display:"1967",group:"showa",era:"昭和",event:"公害対策基本法",goro:"ヒトクムナ（1967）公害対策",desc:"四大公害病などの公害問題を受けて、公害対策基本法が制定された。",person:null},
+        {id:"y1967b",year:"1967",display:"1967",group:"showa",era:"昭和",event:"非核三原則が表明される",goro:"ヒトクムナ（1967）非核三原則",desc:"佐藤栄作首相が、核兵器を「持たず・作らず・持ち込ませず」の非核三原則を表明した。",person:null},
+        {id:"y1972",year:"1972",display:"1972",group:"showa",era:"昭和",event:"沖縄が返還される",goro:"ヒトクナニ（1972）沖縄返還",desc:"アメリカの統治下にあった沖縄が日本に返還された。",person:null},
+        {id:"y1973",year:"1973",display:"1973",group:"showa",era:"昭和",event:"石油危機（オイルショック）",goro:"ヒトクナミ（1973）オイルショック",desc:"中東戦争をきっかけに石油価格が高騰した石油危機。高度経済成長が終わる転機になった。",person:null},
+        {id:"y1978",year:"1978",display:"1978",group:"showa",era:"昭和",event:"日中平和友好条約",goro:"ヒトクナヤ（1978）日中平和",desc:"日中平和友好条約が結ばれ、日本と中国の関係がさらに進んだ。",person:null},
+        {id:"y1985",year:"1985",display:"1985",group:"showa",era:"昭和",event:"男女雇用機会均等法",goro:"ヒトクヤゴ（1985）均等法",desc:"男女雇用機会均等法が成立し、働く場での男女の機会均等が法律で定められた。",person:null},
+        {id:"y1989",year:"1989",display:"1989",group:"showa",era:"平成",event:"ベルリンの壁が崩壊する",goro:"ヒトクヤク（1989）壁が崩れる",desc:"東西ドイツを分けていたベルリンの壁が崩壊し、冷戦の終わりが近づいた。",person:null},
+        {id:"y1989b",year:"1989",display:"1989",group:"showa",era:"平成",event:"マルタ会談",goro:"ヒトクヤク（1989）マルタで冷戦終結",desc:"アメリカとソ連の首脳がマルタ会談で冷戦の終結を宣言した。",person:null},
+        {id:"y1991",year:"1991",display:"1991",group:"showa",era:"平成",event:"バブル経済が崩壊する",goro:"ヒトククヒト（1991）バブル崩壊",desc:"地価と株価が急落し、バブル経済が崩壊した。その後、長い不況が続いた。",person:null},
+        {id:"y1991b",year:"1991",display:"1991",group:"showa",era:"平成",event:"ソ連が解体する",goro:"ヒトククヒト（1991）ソ連解体",desc:"ソビエト連邦が解体し、東西冷戦が完全に終わった。",person:null},
+        {id:"y2011",year:"2011",display:"2011",group:"showa",era:"平成",event:"東日本大震災",goro:"フレヒトヒト（2011）東日本大震災",desc:"東日本大震災が発生し、東北地方を中心に津波など大きな被害が出た。",person:null}
       ];
       var yLearned = {}, yFilter = "all", yCustomGoro = {};
       function personName(id){ var p = PEOPLE.filter(function(x){return x.id===id;})[0]; return p ? p.name : ""; }

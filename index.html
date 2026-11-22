@@ -211,6 +211,19 @@
       .wall-fig{display:flex;align-items:flex-end;gap:3px;height:64px;background:linear-gradient(180deg,var(--ai-soft),var(--gold-soft));border-radius:10px;padding:10px 12px;margin:12px 0;overflow:hidden}
       .wall-fig i{flex:1;background:var(--ink-soft);border-radius:3px 3px 0 0;opacity:.75;min-height:18px}
       .wall-cap{font-size:12px;color:var(--ink-soft);margin:0 0 6px}
+      .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+      .tcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px}
+      .tcard.highlight{outline:3px solid var(--shu);outline-offset:2px}
+      .tcard.learned{outline:2px solid var(--ok);outline-offset:-2px}
+      .ttop{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+      .tname{font-size:25px;font-weight:800;margin:0;line-height:1.3}
+      .tname rt{font-size:11px;font-weight:500;color:var(--ink-soft)}
+      .tdef{margin:0;font-size:14.5px;font-weight:700;line-height:1.6}
+      .tfacts{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:13.5px;color:var(--ink-soft)}
+      .tfacts li{padding-left:18px;position:relative;line-height:1.55}
+      .tfacts li::before{content:"◆";position:absolute;left:0;color:var(--gold);font-size:10px;top:4px}
+      .tcard .wall-fig{margin:4px 0 0}
+      .tcard .wall-cap{margin:0}
       footer{margin-top:48px;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px}
     </style>
   </head>
@@ -222,7 +235,7 @@
         <div class="hero-stats">
           <span class="stat">人物カード <b>31</b> 人</span>
           <span class="stat">年号カード <b>44</b> 枚（紀元0年〜）</span>
-          <span class="stat">用語カード <b>元寇防塁</b></span>
+          <span class="stat">用語カード <b>36</b> 枚</span>
           <span class="stat">足利将軍 <b>15</b> 代・徳川将軍 <b>15</b> 代</span>
           <span class="stat">関係図 <b>3</b> 本</span>
           <span class="stat">確認クイズ <b>10</b> 問</span>
@@ -242,6 +255,7 @@
       <nav class="tabs" role="tablist" aria-label="モード切替">
         <button class="tab" role="tab" id="tabCards" aria-selected="true">人物カード</button>
         <button class="tab" role="tab" id="tabYears" aria-selected="false">年号カード（紀元0年〜）</button>
+        <button class="tab" role="tab" id="tabTerms" aria-selected="false">用語カード</button>
         <button class="tab" role="tab" id="tabQuiz" aria-selected="false">クイズで確認</button>
       </nav>
       <div id="cardsMode">
@@ -373,26 +387,7 @@
           </div>
         </section>
 
-        <article class="term-card" id="term-genko-borui">
-          <span class="kicker">用語カード ｜ 鎌倉時代 ・ 元寇</span>
-          <h3><ruby>元寇防塁<rt>げんこうぼうるい</rt></ruby></h3>
-          <p style="margin:0;color:var(--ink-soft);font-size:14px">「元寇（げんこう）」＝モンゴル帝国（元）の襲来に備えた、石積みの防御の壁。</p>
-          <div class="term-tags"><span>鎌倉時代</span><span>1274年 文永の役の後</span><span>指示：北条時宗</span><span>場所：博多湾沿い</span><span>長さ：約20km</span><span>目的：1281年 弘安の役に備える</span></div>
-          <div class="wall-fig" aria-hidden="true"><i style="height:38%"></i><i style="height:55%"></i><i style="height:44%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:68%"></i><i style="height:46%"></i><i style="height:58%"></i><i style="height:41%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:65%"></i></div>
-          <p class="wall-cap">▲ イメージ図：博多湾の海岸線に沿って石を積み上げた長い防塁（今も一部が残り、国史跡になっています）</p>
-          <div class="term-facts">
-            <div class="term-fact"><b>いつ</b><span>1274年・文永の役の後、1276年頃から築造</span></div>
-            <div class="term-fact"><b>だれが</b><span>鎌倉幕府 第8代執権・北条時宗の指示</span></div>
-            <div class="term-fact"><b>どこに・何を</b><span>博多湾沿いに約20kmにわたる石の防塁</span></div>
-            <div class="term-fact"><b>なぜ</b><span>再び来る元の襲来（1281年・弘安の役）に備えるため</span></div>
-          </div>
-          <p><b>覚え方：</b>元寇は2回セット ― <b>1274年 文永の役 → 元寇防塁を築く → 1281年 弘安の役</b>。1回目の襲来で「上陸されたら危ない」と分かったから、海岸に壁を作った、という因果で覚えると忘れません。弘安の役では防塁が元の上陸を阻み、戦いは長期化、そこへ台風（いわゆる神風）が来て元の船団は壊滅しました。</p>
-          <p><b>語呂：</b>「<b>石（いし）積んで 20キロ、元を防ぐ 防塁</b>」／ 年号は「1274（イチジなし？ 文永）→ 防塁 → 1281（イチニヤイ 弘安）」と流れで。</p>
-          <div class="ylink">
-            <button class="person-link" type="button" data-goto-person="tokimune">人物カード：北条時宗を見る →</button>
-            <button class="person-link" type="button" data-goto-year="y1281">年号カード：1281年 弘安の役を見る →</button>
-          </div>
-        </article>
+        <p class="goro-note">元寇防塁をはじめ歴史用語は「用語カード」タブに全36枚まとめました。1274年・1281年の年号カードや北条時宗の人物カードからも、各用語へ直接飛べます。</p>
 
         <div class="filters" role="group" aria-label="年号カードを時代で絞り込み">
           <button class="chip ychip" data-yfilter="all" aria-pressed="true">すべて（紀元0年〜）</button>
@@ -405,6 +400,26 @@
         <p class="count-note" id="yCountNote"></p>
         <p class="goro-note">年号カードの語呂合わせも、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます（このページを開いている間だけ有効）。</p>
         <div class="ygrid" id="yearGrid"></div>
+      </div>
+      <div id="termsMode" class="hidden">
+        <section class="block" style="margin-top:8px">
+          <h2>用語カード ― 時代ごとに歴史用語を覚える</h2>
+          <p class="lead">元寇防塁だけではありません。古代から明治まで、教科書で太字になる歴史用語を時代ごとに全36枚そろえました。各カードに「ひとことで言うと／おさえるポイント／覚え方（語呂）」と、関係する人物・年号へのリンク付き。語呂は人物・年号カードと同じく、自分の言葉に書き換えられます。</p>
+          <div class="progress-box" style="margin:0 0 16px" aria-live="polite">
+            <div class="row"><span>覚えた用語</span><span><b id="tLearnedCount">0</b> / 36 枚</span></div>
+            <div class="bar"><i id="tLearnedBar"></i></div>
+          </div>
+        </section>
+        <div class="filters" role="group" aria-label="用語カードを時代で絞り込み">
+          <button class="chip tchip" data-tfilter="all" aria-pressed="true">すべて</button>
+          <button class="chip tchip" data-tfilter="kodai" aria-pressed="false">古代（〜平安）</button>
+          <button class="chip tchip" data-tfilter="chusei" aria-pressed="false">鎌倉・室町</button>
+          <button class="chip tchip" data-tfilter="sengoku" aria-pressed="false">戦国・安土桃山</button>
+          <button class="chip tchip" data-tfilter="edo" aria-pressed="false">江戸</button>
+          <button class="chip tchip" data-tfilter="bakumatsu" aria-pressed="false">幕末・明治</button>
+        </div>
+        <p class="count-note" id="tCountNote"></p>
+        <div class="tgrid" id="termGrid"></div>
       </div>
       <div id="quizMode" class="hidden">
         <div class="quiz" id="quizBox">
@@ -551,7 +566,7 @@
               '<p class="catch">' + p.catch + '</p>' +
               '<ul class="deeds">' + deedsHtml + '</ul>' +
               memoHtml +
-              (p.id === "tokimune" ? '<div class="ylink"><button class="term-link" type="button" data-goto-term="genko">関連用語：元寇防塁（げんこうぼうるい）を見る →</button></div>' : '') +
+              (p.id === "tokimune" ? '<div class="ylink"><button class="term-link" type="button" data-goto-term="genko-borui">関連用語：元寇防塁（げんこうぼうるい）を見る →</button></div>' : '') +
               '<button class="learn-btn" type="button">' + (learned[p.id] ? "✓ 覚えた（タップで取消）" : "覚えた！にする") + '</button>' +
             '</div>';
           card.querySelector(".learn-btn").addEventListener("click", function(){
@@ -578,9 +593,9 @@
         document.getElementById("learnedCount").textContent = n;
         document.getElementById("learnedBar").style.width = (n / PEOPLE.length * 100) + "%";
       }
-      document.querySelectorAll(".chip").forEach(function(chip){
+      document.querySelectorAll(".chip[data-filter]").forEach(function(chip){
         chip.addEventListener("click", function(){
-          document.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+          document.querySelectorAll(".chip[data-filter]").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
           chip.setAttribute("aria-pressed","true");
           currentFilter = chip.getAttribute("data-filter");
           renderCards(currentFilter);
@@ -668,7 +683,7 @@
             '<p class="ydesc">' + y.desc + '</p>' +
             '<div class="ylink">' +
               (y.person ? '<button class="person-link" type="button" data-goto-person="' + y.person + '">人物：' + personName(y.person) + ' →</button>' : '') +
-              (y.term ? '<button class="term-link" type="button" data-goto-term="genko">用語：元寇防塁 →</button>' : '') +
+              (y.term ? '<button class="term-link" type="button" data-goto-term="genko-borui">用語：元寇防塁 →</button>' : '') +
               '<button class="ylearn" type="button">' + (yLearned[y.id] ? "✓ 覚えた" : "覚えた！") + '</button>' +
             '</div>';
           el.querySelector(".ylearn").addEventListener("click", function(){ yLearned[y.id] = !yLearned[y.id]; updateYProgress(); renderYearCards(); });
@@ -697,19 +712,118 @@
         });
       });
       renderYearCards();
-      var tabCards = document.getElementById("tabCards"), tabYears = document.getElementById("tabYears"), tabQuiz = document.getElementById("tabQuiz");
-      var cardsMode = document.getElementById("cardsMode"), yearsMode = document.getElementById("yearsMode"), quizMode = document.getElementById("quizMode");
+      /* ===== 用語カード データ（全36枚） ===== */
+      var TERMS = [
+        {id:"yamatai",group:"kodai",era:"弥生",term:"邪馬台国",reading:"やまたいこく",def:"卑弥呼が女王として治めた国。約30の小国をまとめた連合の中心。",facts:["中国の歴史書『魏志倭人伝』に記録が残る","239年、卑弥呼が魏へ使いを送り「親魏倭王」の称号をもらった","場所は九州説と畿内（近畿）説があり、今も論争中"],goro:"ヤマタイは卑弥呼の国、魏とつながる",person:"himiko",year:"y239"},
+        {id:"zenpokoen",group:"kodai",era:"古墳",term:"前方後円墳",reading:"ぜんぽうこうえんふん",def:"前が四角・後ろが丸い、鍵穴の形をした巨大な墓。大王（天皇）や有力豪族の墓。",facts:["最大は大阪の大仙古墳（仁徳天皇陵）で全長約486m","3世紀から6世紀ごろ、全国各地に造られた","「古墳時代」という時代名の由来になった"],goro:"前が□、後ろが○、鍵穴型のお墓",person:null,year:null},
+        {id:"ritsuryo",group:"kodai",era:"奈良",term:"律令",reading:"りつりょう",def:"律＝犯罪と罰の法律、令＝政治や行政の決まり。中国式の法律で国を治める仕組み。",facts:["701年の大宝律令でほぼ完成し、律令国家が成立","役人の仕組み、戸籍、税（租・調・庸）などを細かく決めた","天皇中心の中央集権国家の土台になった"],goro:"律は罰、令は決まり。法律で治める国",person:null,year:"y701"},
+        {id:"kentoshi",group:"kodai",era:"奈良・平安",term:"遣唐使",reading:"けんとうし",def:"唐（中国）の進んだ制度や文化を学ぶため、日本が送った公式の使節団。",facts:["630年から894年まで、約260年にわたって派遣","留学生の阿倍仲麻呂、唐から来た鑑真もこの時代の人","894年、菅原道真の提案で廃止された"],goro:"唐へ学びに行く公式ツアー、894年で終了",person:null,year:"y894"},
+        {id:"sekkan",group:"kodai",era:"平安",term:"摂関政治",reading:"せっかんせいじ",def:"藤原氏が摂政・関白の地位を独占し、天皇の親戚（外戚）として政治を動かした仕組み。",facts:["自分の娘を天皇の后にするのが権力の源だった","全盛期は藤原道長と子の頼通の時代","天皇が幼いときは摂政、成人後は関白が補佐した"],goro:"藤原氏が天皇の「おじいちゃん」として政治",person:"michinaga",year:null},
+        {id:"kokufu",group:"kodai",era:"平安",term:"国風文化",reading:"こくふうぶんか",def:"遣唐使の廃止後、中国文化を日本風にアレンジして生まれた独自の文化。",facts:["ひらがな・カタカナが発達し、女流文学が花開いた","紫式部『源氏物語』、清少納言『枕草子』が代表作","寝殿造の屋敷や浄土信仰も広がった"],goro:"唐マネを卒業、日本風アレンジ文化",person:"michinaga",year:"y894"},
+        {id:"insei",group:"kodai",era:"平安",term:"院政",reading:"いんせい",def:"天皇を退いた上皇（院）が、引退後も政治の実権を握り続ける仕組み。",facts:["1086年、白河上皇が始めた","現役の天皇より院のほうが力を持つ時代が続いた","院を守る武士が力をつけ、武家政権への道を開いた"],goro:"引退した院が、いちばん偉い政治",person:null,year:"y1086"},
+        {id:"shoen",group:"kodai",era:"平安〜鎌倉",term:"荘園",reading:"しょうえん",def:"貴族や大きな寺社が私有した農地。税を免除されるものが多く、公地公民の仕組みが崩れる原因になった。",facts:["743年の墾田永年私財法（開墾した土地の私有を認める）がきっかけ","農民は荘園の領主に年貢を納め、守ってもらった","のちに武士（地頭）が荘園に入り込み、領主と対立した"],goro:"自分の農地は自分のもの、税なし荘園",person:null,year:null},
+        {id:"genko-borui",group:"chusei",era:"鎌倉",term:"元寇防塁",reading:"げんこうぼうるい",def:"元（モンゴル帝国）の再襲来に備え、博多湾沿いに築かれた石積みの防御の壁。",facts:["1274年・文永の役の後、1276年頃から築造された","指示したのは鎌倉幕府 第8代執権・北条時宗","博多湾沿いに約20kmにわたって築かれた","1281年・弘安の役では元の上陸を阻み、戦いの長期化と台風（神風）につながった"],goro:"石積んで20キロ、元を防ぐ防塁",person:"tokimune",year:"y1281",fig:true},
+        {id:"shugo-jito",group:"chusei",era:"鎌倉",term:"守護・地頭",reading:"しゅご・じとう",def:"頼朝が全国に置いた役職。守護は国ごとの警察・軍事の責任者、地頭は荘園や公領の管理者。",facts:["1185年、源頼朝が設置を認めさせた","武士が全国を支配していく足がかりになった","地頭と荘園領主との土地をめぐる争いが多発した"],goro:"国は守護、土地は地頭が管理",person:"yoritomo",year:"y1185"},
+        {id:"shikken",group:"chusei",era:"鎌倉",term:"執権政治",reading:"しっけんせいじ",def:"将軍を補佐する役職「執権」を北条氏が独占し、実質的に幕府を動かした政治。",facts:["初代執権は北条時政、時宗は第8代執権","将軍より執権のほうが実権を持つ時代が長く続いた","1221年の承久の乱の勝利で幕府の優位が決定的になった"],goro:"将軍の補佐が、いつのまにか主役",person:"tokimune",year:"y1221"},
+        {id:"goon",group:"chusei",era:"鎌倉",term:"御恩と奉公",reading:"ごおんとほうこう",def:"将軍と御家人（家来の武士）の主従の約束。将軍は領地を守り（御恩）、御家人は戦で働く（奉公）。",facts:["結びつきの中心は「土地」だった","日本の封建制度の基本の形","元寇では新しい土地が得られず、御恩が不足して御家人が困窮した"],goro:"土地をもらう代わりに、戦で働く約束",person:"yoritomo",year:null},
+        {id:"tokuseirei",group:"chusei",era:"鎌倉",term:"徳政令",reading:"とくせいれい",def:"借金を帳消しにする法令。元寇の恩賞不足で困った御家人を救うために出された。",facts:["1297年の永仁の徳政令が有名","御家人の土地の売買も禁止された","貸す側がお金を貸し渋るようになり、逆効果の面もあった"],goro:"借金チャラにする、御家人の救済令",person:"tokimune",year:null},
+        {id:"kamakura-bukkyo",group:"chusei",era:"鎌倉",term:"鎌倉新仏教",reading:"かまくらしんぶっきょう",def:"戦乱と災いの多い鎌倉時代に生まれた新しい仏教。身分を問わず誰でも救われる教えが広がった。",facts:["法然は浄土宗、弟子の親鸞は浄土真宗を開いた","栄西の臨済宗・道元の曹洞宗は禅宗で、武士に広がった","日蓮の日蓮宗、一遍の時宗もこの時代に生まれた"],goro:"念仏・題目・座禅。新しい救い方いろいろ",person:null,year:null},
+        {id:"kango",group:"chusei",era:"室町",term:"勘合貿易",reading:"かんごうぼうえき",def:"明（中国）との公式貿易。合い札の「勘合符」を持つ船だけを正式な貿易船と認めた。",facts:["1404年、足利義満が始めた（日明貿易）","輸出は刀・銅・硫黄、輸入は明銭・生糸など","大きな利益が幕府の重要な財源になった"],goro:"合い札チェックで、明と公式貿易",person:"yoshimitsu",year:"y1404"},
+        {id:"tsuchi-ikki",group:"chusei",era:"室町",term:"土一揆",reading:"つちいっき",def:"農民たちが団結し、年貢の軽減や借金の帳消し（徳政）を求めて起こした集団行動。",facts:["1428年の正長の土一揆は全国に広がった大規模なもの","酒屋や土倉（金融業者）が襲われることもあった","農民の力が強くなってきたことを示す出来事"],goro:"農民みんなで立ち上がる、一揆",person:null,year:null},
+        {id:"gekokujo",group:"sengoku",era:"戦国",term:"下剋上",reading:"げこくじょう",def:"身分の低い者が実力で上の者を倒してのし上がる風潮。戦国時代の原動力。",facts:["家臣が主君を倒して大名になる例が相次いだ","戦国大名の多くが下剋上の出身","応仁の乱（1467年）以降、全国に広がった"],goro:"下の者が上を倒す、実力勝負の時代",person:"yoshimasa",year:"y1467"},
+        {id:"rakuichi",group:"sengoku",era:"戦国・安土",term:"楽市・楽座",reading:"らくいち・らくざ",def:"信長が進めた経済政策。市場の税を免除し（楽市）、商売の特権を持つ組合「座」を廃止した（楽座）。",facts:["誰でも自由に商売ができるようになった","城下町がにぎわい、経済が活発になった","信長の政策の代表例として必ず出る用語"],goro:"自由に市を開いて、商売繁盛",person:"nobunaga",year:null},
+        {id:"kenchi",group:"sengoku",era:"安土桃山",term:"太閤検地",reading:"たいこうけんち",def:"秀吉が全国の田畑を測り、収穫量を「石高」で統一して表した土地調査。",facts:["物差しや枡（ます）を全国で統一した","石高が大名の力や格を表す基準になった","農民が納める年貢の基準もはっきり決まった"],goro:"田んぼを測って、石高で全国統一",person:"hideyoshi",year:null},
+        {id:"katanagari",group:"sengoku",era:"安土桃山",term:"刀狩",reading:"かたながり",def:"秀吉が農民から刀や鉄砲などの武器を取り上げた政策。",facts:["1588年に刀狩令が出された","農民の一揆を防ぎ、農業に専念させる狙い","兵農分離を進める柱の一つになった"],goro:"農民の刀を取り上げ、身分を固定",person:"hideyoshi",year:"y1588"},
+        {id:"heino",group:"sengoku",era:"安土桃山",term:"兵農分離",reading:"へいのうぶんり",def:"戦う武士と、米を作る農民の身分をはっきり分ける仕組み。検地と刀狩によって完成した。",facts:["武士は城下町に住み、農民は村で農業に専念","江戸時代の身分制度（士農工商）の土台になった","身分が固定され、世襲が基本になった"],goro:"戦う人と作る人を、はっきり分ける",person:"hideyoshi",year:"y1590"},
+        {id:"nanban",group:"sengoku",era:"戦国",term:"南蛮貿易",reading:"なんばんぼうえき",def:"ポルトガルやスペインなど、南の海から来たヨーロッパ人（南蛮人）との貿易。",facts:["1543年に鉄砲、1549年にキリスト教が伝わるきっかけになった","生糸や火薬などを輸入し、銀などを輸出した","南蛮屏風には貿易や南蛮人の姿が描かれた"],goro:"南の海から、鉄砲と新しい文化が来た",person:null,year:"y1543"},
+        {id:"buke-shohatto",group:"edo",era:"江戸",term:"武家諸法度",reading:"ぶけしょはっと",def:"幕府が大名を統制するために定めた法律。大名へのルールブック。",facts:["1615年、2代将軍・秀忠の代に制定された","城の無断修理や、幕府に無断の結婚が禁止された","違反すると領地没収などの重い罰があった"],goro:"大名へのルールブック、違反は没収",person:"hidetada",year:"y1615"},
+        {id:"sankin",group:"edo",era:"江戸",term:"参勤交代",reading:"さんきんこうたい",def:"大名が1年おきに江戸と自分の領地を行き来する制度。妻子は江戸に住み続けた。",facts:["1635年、3代将軍・家光の代に制度化された","大名に大きな出費をさせ、力を削ぐ効果があった","街道や宿場町が整備され、人の移動が活発になった"],goro:"行ったり来たり、大名はお金と時間を使う",person:"iemitsu",year:null},
+        {id:"sakoku",group:"edo",era:"江戸",term:"鎖国",reading:"さこく",def:"外国との交流を厳しく制限した仕組み。貿易は長崎の出島でオランダ・中国とのみ行われた。",facts:["1639年、家光の代に完成した","キリスト教の広がりを防ぐのが大きな目的の一つ","実際は長崎のほか対馬・薩摩・松前からも限られた交流があった"],goro:"国の窓口は長崎だけ、ほかは閉ざす",person:"iemitsu",year:"y1639"},
+        {id:"shorui",group:"edo",era:"江戸",term:"生類憐みの令",reading:"しょうるいあわれみのれい",def:"5代将軍・綱吉が出した、生き物を大切にする法令。犬の保護が特に手厚かった。",facts:["1685年ごろから繰り返し出された","犬を傷つけると重い罰を受けたため「犬公方」と呼ばれた","行き過ぎた内容が多く、綱吉の死後に廃止された"],goro:"生き物を憐れむ、犬は特別扱い",person:"tsunayoshi",year:null},
+        {id:"sandai-kaikaku",group:"edo",era:"江戸",term:"幕府の三大改革",reading:"ばくふのさんだいかいかく",def:"幕府の財政危機を立て直すために行われた改革の総称。享保・寛政・天保の3つを指す。",facts:["享保の改革（1716年〜）は8代将軍・吉宗。質素倹約と目安箱","寛政の改革は松平定信、天保の改革は水野忠邦が担当","どれも財政の立て直しが目的だが、長続きしなかった"],goro:"困った幕府の立て直し、3回セット",person:"yoshimune",year:"y1716"},
+        {id:"rangaku",group:"edo",era:"江戸",term:"蘭学",reading:"らんがく",def:"オランダ語の書物を通じて、西洋の学問や技術を学ぶ学問。鎖国下で唯一の西洋への窓口だった。",facts:["杉田玄白らが『解体新書』（1774年）を翻訳出版した","医学・天文学・地理学などが発展した","幕末・明治の近代化を担う人材の土台になった"],goro:"オランダ語で、西洋の科学を学ぶ",person:null,year:null},
+        {id:"genroku",group:"edo",era:"江戸",term:"元禄文化",reading:"げんろくぶんか",def:"綱吉の頃（17世紀末〜18世紀初め）、大坂・京都を中心に栄えた町人の文化。",facts:["井原西鶴の小説、松尾芭蕉の俳諧が代表作","近松門左衛門の人形浄瑠璃、歌舞伎も人気を集めた","経済力をつけた町人が文化の担い手になった"],goro:"町人が主役、にぎやかな上方文化",person:"tsunayoshi",year:null},
+        {id:"sonno",group:"bakumatsu",era:"幕末",term:"尊王攘夷",reading:"そんのうじょうい",def:"天皇を尊び（尊王）、外国人を追い払おう（攘夷）という考え方。倒幕運動の原動力になった。",facts:["吉田松陰らが唱え、長州・薩摩の志士に広がった","外国船への砲撃など過激な行動にもつながった","やがて攘夷は現実的でなくなり、倒幕そのものが目的になっていった"],goro:"天皇を尊び、外敵を払え",person:"shoin",year:null},
+        {id:"kobu",group:"bakumatsu",era:"幕末",term:"公武合体",reading:"こうぶがったい",def:"朝廷（公）と幕府（武）が協力して国を治めようという考え方。尊王攘夷・討幕と対立した。",facts:["孝明天皇の妹・和宮が14代将軍・家茂に嫁いだのが象徴","幕府を残しながら朝廷の権威を高める穏健な路線","薩長が討幕へ進む中で、次第に力を失った"],goro:"朝廷と幕府が、手をつなぐ路線",person:null,year:null},
+        {id:"fukoku",group:"bakumatsu",era:"明治",term:"富国強兵",reading:"ふこくきょうへい",def:"経済を豊かにして（富国）、軍隊を強くする（強兵）という、明治政府の基本方針。",facts:["殖産興業で官営工場を作り、産業を育てた","1873年の徴兵令で、国民からなる軍隊を作った","欧米列強に並び、不平等条約を改正するのが目標だった"],goro:"豊かな国と、強い軍隊を目指す",person:"okubo",year:"y1873"},
+        {id:"bunmei",group:"bakumatsu",era:"明治",term:"文明開化",reading:"ぶんめいかいか",def:"明治初期、西洋の文化や生活様式を積極的に取り入れた風潮。",facts:["ガス灯・鉄道・洋服・牛肉料理などが広がった","福沢諭吉ら啓蒙思想家が新しい考え方を紹介した","「散切り頭を叩いてみれば、文明開化の音がする」と歌われた"],goro:"何でも西洋風に、新しく変える",person:"fukuzawa",year:null},
+        {id:"haihan",group:"bakumatsu",era:"明治",term:"廃藩置県",reading:"はいはんちけん",def:"藩をすべて廃止して県を置き、中央集権国家を作るための大改革。",facts:["1871年に実施され、藩主（知藩事）は免職となり東京へ移った","県の知事は政府が任命した","版籍奉還（1869年）に続く、明治政府の土台固め"],goro:"藩をやめて、県に統一",person:"iwakura",year:"y1871"},
+        {id:"chiso",group:"bakumatsu",era:"明治",term:"地租改正",reading:"ちそかいせい",def:"税の仕組みを、米で納める形から、土地の値段（地価）に対する現金払いに変えた改革。",facts:["1873年に始まり、税率は地価の3％とされた","政府の収入が毎年安定するようになった","農民の負担は軽くならず、各地で一揆が起きた"],goro:"税は米からお金へ、地価の3％",person:"okubo",year:"y1873"},
+        {id:"minken",group:"bakumatsu",era:"明治",term:"自由民権運動",reading:"じゆうみんけんうんどう",def:"国会の開設や憲法の制定を求めて、国民が広げた政治運動。",facts:["1874年、板垣退助らの民撰議院設立建白書が始まり","1881年に自由党、1882年に立憲改進党が結成された","1889年の憲法発布・1890年の帝国議会開設につながった"],goro:"国民の権利と、国会を求める運動",person:"itagaki",year:"y1889"}
+      ];
+      var tLearned = {}, tFilter = "all", tCustomGoro = {};
+      var TERA_LABEL = {kodai:"古代",chusei:"鎌倉・室町",sengoku:"戦国・安土桃山",edo:"江戸",bakumatsu:"幕末・明治"};
+      function yearLabel(id){
+        var y = YEAR_CARDS.filter(function(x){return x.id===id;})[0];
+        return y ? (y.display + "年 " + y.event) : "";
+      }
+      function renderTermCards(){
+        var gridT = document.getElementById("termGrid"); gridT.innerHTML = ""; var shown = 0;
+        TERMS.forEach(function(t){
+          if(tFilter !== "all" && t.group !== tFilter) return; shown++;
+          var el = document.createElement("article");
+          el.id = "term-" + t.id;
+          el.className = "tcard" + (tLearned[t.id] ? " learned" : "");
+          var tMy = tCustomGoro[t.id];
+          var factsHtml = t.facts.map(function(f){ return "<li>" + f + "</li>"; }).join("");
+          var figHtml = t.fig ? '<div class="wall-fig" aria-hidden="true"><i style="height:38%"></i><i style="height:55%"></i><i style="height:44%"></i><i style="height:62%"></i><i style="height:50%"></i><i style="height:68%"></i><i style="height:46%"></i><i style="height:58%"></i><i style="height:41%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:65%"></i></div><p class="wall-cap">▲ イメージ図：博多湾の海岸線に沿って石を積み上げた長い防塁（今も一部が残り、国史跡になっています）</p>' : "";
+          var goroHtml = '<div class="ygoro"><span class="tag">覚え方</span>' + (tMy ? '<span class="my-badge">自分の語呂</span>' : '') +
+            '<p class="phrase">' + (tMy ? escapeHtml(tMy) : t.goro) + '</p>' +
+            '<div class="goro-tools"><button class="goro-edit" type="button">' + (tMy ? '自分の語呂を変更する' : '自分の語呂を書く') + '</button>' +
+            (tMy ? '<button class="goro-reset" type="button">元の語呂に戻す</button>' : '') + '</div>' +
+            '<div class="goro-slot"></div></div>';
+          el.innerHTML = '<div class="ttop"><h3 class="tname"><ruby>' + t.term + '<rt>' + t.reading + '</rt></ruby></h3><span class="yera">' + t.era + '</span></div>' +
+            '<p class="tdef">' + t.def + '</p>' +
+            figHtml +
+            '<ul class="tfacts">' + factsHtml + '</ul>' +
+            goroHtml +
+            '<div class="ylink">' +
+              (t.person ? '<button class="person-link" type="button" data-goto-person="' + t.person + '">人物：' + personName(t.person) + ' →</button>' : '') +
+              (t.year ? '<button class="person-link" type="button" data-goto-year="' + t.year + '">年号：' + yearLabel(t.year) + ' →</button>' : '') +
+              '<button class="ylearn" type="button">' + (tLearned[t.id] ? "✓ 覚えた" : "覚えた！") + '</button>' +
+            '</div>';
+          el.querySelector(".ylearn").addEventListener("click", function(){ tLearned[t.id] = !tLearned[t.id]; updateTProgress(); renderTermCards(); });
+          wireGoroEditor(el, {
+            current: tMy || "",
+            placeholder: t.goro,
+            onSave: function(v){
+              if(v){ tCustomGoro[t.id] = v; } else { delete tCustomGoro[t.id]; }
+              renderTermCards();
+            },
+            onReset: function(){ delete tCustomGoro[t.id]; renderTermCards(); }
+          });
+          gridT.appendChild(el);
+        });
+        document.getElementById("tCountNote").textContent = (tFilter === "all" ? "全" + TERMS.length + "枚" : TERA_LABEL[tFilter] + " の " + shown + "枚") + " を表示中（時代順）";
+      }
+      function updateTProgress(){
+        var n = TERMS.filter(function(t){ return tLearned[t.id]; }).length;
+        document.getElementById("tLearnedCount").textContent = n;
+        document.getElementById("tLearnedBar").style.width = (n / TERMS.length * 100) + "%";
+      }
+      document.querySelectorAll(".tchip").forEach(function(chip){
+        chip.addEventListener("click", function(){
+          document.querySelectorAll(".tchip").forEach(function(c){ c.setAttribute("aria-pressed","false"); });
+          chip.setAttribute("aria-pressed","true"); tFilter = chip.getAttribute("data-tfilter"); renderTermCards();
+        });
+      });
+      renderTermCards();
+      var tabCards = document.getElementById("tabCards"), tabYears = document.getElementById("tabYears"), tabTerms = document.getElementById("tabTerms"), tabQuiz = document.getElementById("tabQuiz");
+      var cardsMode = document.getElementById("cardsMode"), yearsMode = document.getElementById("yearsMode"), termsMode = document.getElementById("termsMode"), quizMode = document.getElementById("quizMode");
       function setMode(mode){
         tabCards.setAttribute("aria-selected", String(mode === "cards"));
         tabYears.setAttribute("aria-selected", String(mode === "years"));
+        tabTerms.setAttribute("aria-selected", String(mode === "terms"));
         tabQuiz.setAttribute("aria-selected", String(mode === "quiz"));
         cardsMode.classList.toggle("hidden", mode !== "cards");
         yearsMode.classList.toggle("hidden", mode !== "years");
+        termsMode.classList.toggle("hidden", mode !== "terms");
         quizMode.classList.toggle("hidden", mode !== "quiz");
         if(mode === "quiz" && !quizStarted) startQuiz();
       }
       tabCards.addEventListener("click", function(){ setMode("cards"); });
       tabYears.addEventListener("click", function(){ setMode("years"); });
+      tabTerms.addEventListener("click", function(){ setMode("terms"); });
       tabQuiz.addEventListener("click", function(){ setMode("quiz"); });
       function highlightEl(el){ if(!el) return; el.scrollIntoView({behavior:"smooth", block:"center"}); el.classList.add("highlight"); setTimeout(function(){ el.classList.remove("highlight"); }, 2600); }
       document.addEventListener("click", function(e){
@@ -726,15 +840,27 @@
           return;
         }
         var gt = e.target.closest ? e.target.closest("[data-goto-term]") : null;
-        if(gt){ setMode("years"); setTimeout(function(){ highlightEl(document.getElementById("term-genko-borui")); }, 80); return; }
+        if(gt){
+          var tid = gt.getAttribute("data-goto-term");
+          var tm = TERMS.filter(function(x){ return x.id === tid; })[0];
+          setMode("terms");
+          if(tm && tFilter !== "all" && tm.group !== tFilter){
+            document.querySelectorAll(".tchip").forEach(function(c){ c.setAttribute("aria-pressed", String(c.getAttribute("data-tfilter") === "all")); });
+            tFilter = "all"; renderTermCards();
+          }
+          setTimeout(function(){ highlightEl(document.getElementById("term-" + tid)); }, 80);
+          return;
+        }
         var gy = e.target.closest ? e.target.closest("[data-goto-year]") : null;
         if(gy){
+          var yid = gy.getAttribute("data-goto-year");
+          var yc = YEAR_CARDS.filter(function(x){ return x.id === yid; })[0];
           setMode("years");
-          if(yFilter !== "all" && yFilter !== "chusei"){
+          if(yc && yFilter !== "all" && yc.group !== yFilter){
             document.querySelectorAll(".ychip").forEach(function(c){ c.setAttribute("aria-pressed", String(c.getAttribute("data-yfilter") === "all")); });
             yFilter = "all"; renderYearCards();
           }
-          setTimeout(function(){ highlightEl(document.getElementById("year-" + gy.getAttribute("data-goto-year"))); }, 80);
+          setTimeout(function(){ highlightEl(document.getElementById("year-" + yid)); }, 80);
         }
       });
       var QUIZ_HINTS = {

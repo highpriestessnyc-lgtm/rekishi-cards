@@ -267,7 +267,7 @@
           <button class="chip" data-filter="edo" aria-pressed="false">江戸・徳川</button>
           <button class="chip" data-filter="bakumatsu" aria-pressed="false">幕末・明治維新</button>
         </div>
-        <p class="goro-note">語呂合わせは、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます。書き換えた語呂は、このページを開いている間だけ有効です。</p>
+        <p class="goro-note">語呂合わせは、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます。書き換えた語呂は、この端末に保存され、次に開いたときも残ります（他の端末や他の人には共有されません）。</p>
         <p class="count-note" id="countNote"></p>
         <div class="grid" id="cardGrid"></div>
         <section class="block">
@@ -403,7 +403,7 @@
           <button class="chip ychip" data-yfilter="showa" aria-pressed="false">昭和・平成</button>
         </div>
         <p class="count-note" id="yCountNote"></p>
-        <p class="goro-note">年号カードの語呂合わせも、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます（このページを開いている間だけ有効）。</p>
+        <p class="goro-note">年号カードの語呂合わせも、各カードの「自分の語呂を書く」ボタンから自分の言葉に書き換えられます（この端末に保存されます）。</p>
         <div class="ygrid" id="yearGrid"></div>
       </div>
       <div id="termsMode" class="hidden">
@@ -513,6 +513,7 @@
       ];
       var learned = {};
       var customGoro = {};
+      try{ var _svP = JSON.parse(localStorage.getItem("rekishiCardsV1") || "null"); if(_svP){ if(_svP.learned) learned = _svP.learned; if(_svP.customGoro) customGoro = _svP.customGoro; } }catch(e){}
       function escapeHtml(s){
         return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
       }
@@ -798,6 +799,7 @@
         {id:"y2011",year:"2011",display:"2011",group:"showa",era:"平成",event:"東日本大震災",goro:"フレヒトヒト（2011）東日本大震災",desc:"東日本大震災が発生し、東北地方を中心に津波など大きな被害が出た。",person:null}
       ];
       var yLearned = {}, yFilter = "all", yCustomGoro = {};
+      try{ var _svY = JSON.parse(localStorage.getItem("rekishiCardsV1") || "null"); if(_svY){ if(_svY.yLearned) yLearned = _svY.yLearned; if(_svY.yCustomGoro) yCustomGoro = _svY.yCustomGoro; } }catch(e){}
       function personName(id){ var p = PEOPLE.filter(function(x){return x.id===id;})[0]; return p ? p.name : ""; }
       function renderYearCards(){
         var gridY = document.getElementById("yearGrid"); gridY.innerHTML = ""; var shown = 0;
@@ -886,6 +888,7 @@
         {id:"minken",group:"bakumatsu",era:"明治",term:"自由民権運動",reading:"じゆうみんけんうんどう",def:"国会の開設や憲法の制定を求めて、国民が広げた政治運動。",facts:["1874年、板垣退助らの民撰議院設立建白書が始まり","1881年に自由党、1882年に立憲改進党が結成された","1889年の憲法発布・1890年の帝国議会開設につながった"],goro:"国民の権利と、国会を求める運動",person:"itagaki",year:"y1889"}
       ];
       var tLearned = {}, tFilter = "all", tCustomGoro = {};
+      try{ var _svT = JSON.parse(localStorage.getItem("rekishiCardsV1") || "null"); if(_svT){ if(_svT.tLearned) tLearned = _svT.tLearned; if(_svT.tCustomGoro) tCustomGoro = _svT.tCustomGoro; } }catch(e){}
       var TERA_LABEL = {kodai:"古代",chusei:"鎌倉・室町",sengoku:"戦国・安土桃山",edo:"江戸",bakumatsu:"幕末・明治"};
       function yearLabel(id){
         var y = YEAR_CARDS.filter(function(x){return x.id===id;})[0];
@@ -1113,6 +1116,10 @@
         }
       });
       document.getElementById("qAgain").addEventListener("click", startQuiz);
+      function _saveRekishi(){ try{ localStorage.setItem("rekishiCardsV1", JSON.stringify({learned:learned, customGoro:customGoro, yLearned:yLearned, yCustomGoro:yCustomGoro, tLearned:tLearned, tCustomGoro:tCustomGoro})); }catch(e){} }
+      setInterval(_saveRekishi, 1000);
+      window.addEventListener("beforeunload", _saveRekishi);
+      document.addEventListener("visibilitychange", function(){ if(document.visibilityState === "hidden") _saveRekishi(); });
     </script>
   </body>
 </html>
